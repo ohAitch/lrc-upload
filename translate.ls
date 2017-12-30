@@ -23,6 +23,10 @@ window.addedGrid = ({files:[file]})->
     ..readAsText file
     ..onload = (target:result:text-grid)->
       preview.innerText = asLRC parse text-grid
+      lrcSubmit.hidden = no
+
+window.submitLrc = ->
+  fetch("/transcribed.json", method: 'post' body: JSON.stringify preview.innerText)
 
 @module? && module.exports = {translate,parse,to-time}
 

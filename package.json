@@ -1,0 +1,17 @@
+{
+  "name": "lrc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "formidable": "^1.1.1",
+    "jq": "^1.7.2",
+    "json2xml": "^0.1.3",
+    "livescript": "^1.5.0"
+  }
+}

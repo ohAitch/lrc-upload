@@ -8,9 +8,10 @@ asText = ->
     else  => "#text"
 
 asLRC = ->
-  (*"") <| for {text,xmax} in it when text?
-    if !text => "\n[#{to-time xmax}]"
-    else  => "#text <#{to-time xmax}>"
+  (*"") <| for {text,xmax}, i in it when text?
+    if text => "#text <#{to-time xmax}>"
+    else if it[i+1]?.text => "\n[#{to-time xmax}]"
+    else "\n"
 
 parse = (text-grid)->
   for section in text-grid / "]:"
